@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JerrySM64 - Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Link to the extracted CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="canvas-container">
+        <canvas id="particleCanvas"></canvas>
+    </div>
+    <div id="mouse-glow"></div>
+
+    <div class="container">
+
+        <section id="hello">
+            <h1 class="hello-title">JerrySM64</h1>
+            <p class="hello-subtitle">A 25-year-old developer from Germany messing around with computers and compilers.</p>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Some may wonder what's up with the <strong class="mono">SM64</strong> in my name. When I decided to go by just Jerry, I needed something to add since using Jerry as a username is basically impossible. Since I was into <strong class="mono">Super Mario 64 Modding and Speedrunning</strong> at the time, I just decided to add it and never changed it.
+                    </p>
+                    <p>
+                        My journey evolved from gaming into a deep fascination with how software works under the hood.
+                    </p>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Today, I build specialized tools like <strong class="mono">SquidMod</strong> (a PID Grabber and modding tool for the original Splatoon).
+                    </p>
+                    <p>
+                        I spend most of my time writing in <strong class="mono">Rust</strong>. Why Rust? I just like the language.
+                    </p>
+                    <p>
+                        Fun Fact: The background effects on this site were written in Rust, too. That's why you see a WebAssembly module if you decide to check this site's sources in the Developer Tools.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipment">
+            <h2 class="section-title">My PC</h2>
+            <div class="equipment-grid">
+                <div class="card">
+                    <h3>Green Demon</h3>
+                    <p>Workstation</p>
+                    <span class="spec-label">CPU</span>
+                    <div class="spec-value mono">AMD Ryzen 7 5800X</div>
+                    <span class="spec-label">GPU</span>
+                    <div class="spec-value mono">Gigabyte Eagle RX 6650 XT</div>
+                </div>
+
+                <div class="card">
+                    <h3>Environment</h3>
+                    <p>System</p>
+                    <span class="spec-label">OS</span>
+                    <div class="spec-value mono">Linux</div>
+                    <span class="spec-label">Editor</span>
+                    <div class="spec-value mono">Doom Emacs</div>
+                </div>
+
+                <div class="card">
+                    <h3>Storage</h3>
+                    <span class="spec-label">OS Drive</span>
+                    <div class="spec-value mono">Lexar NM620 (256GB)</div>
+                    <span class="spec-label">Home Drive</span>
+                    <div class="spec-value mono">Kioxia Exceria Plus G3 (1TB)</div>
+                </div>
+
+                <div class="card">
+                    <h3>Peripherals</h3>
+                    <span class="spec-label">Keyboard</span>
+                    <div class="spec-value mono">Aula F75 (MMD Cream Switches)</div>
+                    <span class="spec-label">Mouse</span>
+                    <div class="spec-value mono">Logitech MX Master 3S</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="links">
+            <h2 class="section-title">Links</h2>
+            <div class="links-wrapper">
+                <a href="https://github.com/JerrySM64" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://youtube.com/@JerrySM64" class="social-link" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://twitch.tv/jerrysm64" class="social-link" target="_blank">
+                    <i class="fab fa-twitch"></i> Twitch
+                </a>
+                <a href="https://github.com/JerrySM64/homepage" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i> This website's source code
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2025-2026 JERRY STARKE (JERRYSM64)
+        </footer>
+
+    </div>
+
+    <!-- Load the WASM module -->
+    <script type="module">
+        import init from './pkg/wasm_module.js';
+        init();
+    </script>
+</body>
+</html>

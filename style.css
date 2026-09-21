@@ -1,0 +1,216 @@
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: rgba(22, 22, 22, 0.6);
+    --accent-color: #05a32f;
+    --accent-glow: rgba(5, 163, 47, 0.2);
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+#canvas-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -2;
+background: var(--bg-color);
+}
+
+#mouse-glow {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: -1;
+background: radial-gradient(
+    300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                            var(--accent-glow),
+                            transparent 80%
+);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 120px 0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.mono { font-family: var(--font-mono); }
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.section-title::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+}
+
+#hello {
+text-align: center;
+}
+
+.hello-title {
+    font-size: clamp(3.5rem, 12vw, 6rem);
+    margin-bottom: 0.5rem;
+    letter-spacing: -3px;
+}
+
+.hello-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dim);
+}
+
+.about-text strong {
+    color: #fff;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .spec-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 1.2rem;
+}
+
+.card .spec-value {
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.links-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: var(--transition);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+
+.social-link:hover i {
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .section-title { font-size: 1.8rem; }
+    section { padding: 80px 0; }
+    .links-wrapper { gap: 1.5rem; }
+}
