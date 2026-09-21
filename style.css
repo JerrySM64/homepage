@@ -140,11 +140,6 @@ h1, h2, h3 {
     transition: var(--transition);
 }
 
-.card:hover {
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
 .card h3 {
     color: var(--accent-color);
     margin-bottom: 0.5rem;
@@ -225,10 +220,6 @@ footer a:hover {
     border-radius: 8px;
     backdrop-filter: blur(8px);
     transition: var(--transition);
-}
-
-.project-card:hover {
-    border-color: var(--accent-color);
 }
 
 .project-card + .project-card {
