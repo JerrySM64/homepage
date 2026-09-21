@@ -90,7 +90,8 @@ h1, h2, h3 {
 }
 
 #hello {
-text-align: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 .hello-title {
@@ -206,6 +207,15 @@ footer {
     font-size: 0.7rem;
     letter-spacing: 2px;
     opacity: 0.5;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
